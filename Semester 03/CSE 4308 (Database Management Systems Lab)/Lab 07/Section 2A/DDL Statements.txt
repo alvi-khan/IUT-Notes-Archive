@@ -1,0 +1,88 @@
+create table Citizen
+(
+	nid int,
+	name varchar2(20),
+	dob date,
+	bloodGroup varchar2(3),
+	address varchar2(30),
+	profession varchar2(10),
+	salary int,
+	constraint CitizenPK primary key (nid)
+);
+
+create table DrivingLicense
+(
+	licenseNo int,
+	nid int,
+	issueDate date,
+	expiryDate date,
+	constraint LicensePK primary key (licenseNo),
+	constraint OwnerFK foreign key (nid) references Citizen (nid),
+	constraint UniqueOwner unique (nid)
+);
+
+create table Hospital
+(
+	hospitalID int,
+	name varchar2(10),
+	location varchar2(20),
+	establishmentYear year,
+	capacity int,
+	constraint HospitalPK primary key (hospitalID)
+);
+
+create table HospitalVisit
+(
+	citizenNID int,
+	hospitalID int,
+	time time,
+	reason varchar2(30),
+	constraint HospitalVisitPK primary key (citizenNID, hospitalID, time),
+	constraint CitizenFK foreign key (citizenNID) references Citizen (nid),
+	constraint HospitalFK foreign key (hospitalID) references Hospital (hospitalID)
+);
+
+create table Library
+(
+	libraryID int,
+	name varchar2(10),
+	location varchar2(30),
+	constraint LibraryPK primary key (libraryID)
+);
+
+create table Publisher
+(
+	publisherID int,
+	name varchar2(10),
+	establishmentYear year,
+	country varchar2(10),
+	reputation int,
+	constraint PublisherPK primary key (publisherID)
+);
+
+create table Book
+(
+	bookID int,
+	title varchar2(10),
+	price int,
+	category varchar2(10),
+	publisherID int,
+	libraryID int,
+	constraint BookPK primary key (bookID, libraryID),
+	constraint PublisherFK foreign key (publisherID) references Publisher (publisherID),
+	constraint LibraryFK foreign key (libraryID) references Library (libraryID)
+);
+
+create table BorrowedBook
+(
+	bookID int,
+	libraryID int,
+	citizenNID int,
+	borrowDate date,
+	returnDate date,
+	constraint BorrowedBookPK primary key (bookID, libraryID, borrowDate),
+	constraint LibraryFK foreign key (libraryID) references Library (libraryID),
+	constraint CitizenFK foreign key (citizenNID) references Citizen (nid)
+);
+
+	

@@ -1,0 +1,97 @@
+-- Task 1
+
+CREATE OR REPLACE FUNCTION total_items_shipped (in_year INT)
+RETURN INT
+IS
+
+total_items INT := 0;
+
+BEGIN
+
+	SELECT SUM(order_items.quantity)
+	INTO total_items
+	FROM orders, order_items
+	WHERE orders.order_year = in_year AND order_items.order_id = orders.order_id AND orders.status = 1;
+
+	RETURN total_items;
+
+END;
+/
+
+Output: 2002 - 878, 2006 - 256, 2017 - 1246
+
+-- Task 2
+
+CREATE OR REPLACE FUNCTION most_sold_item (in_year INT)
+RETURN INT
+IS
+
+best_item INT := -1;
+
+BEGIN
+
+	SELECT id
+	INTO best_item
+	FROM (
+		SELECT order_items.item_id AS id, SUM(quantity) AS total
+		FROM orders, order_items
+		WHERE orders.order_year = in_year AND orders.order_id = order_items.order_id AND orders.status = 1
+		GROUP BY order_items.item_id
+	)
+	WHERE total = (
+		SELECT MAX(total)
+		FROM (
+			SELECT order_items.item_id AS id, SUM(quantity) AS total
+			FROM orders, order_items
+			WHERE orders.order_year = in_year AND orders.order_id = order_items.order_id AND orders.status = 1
+			GROUP BY order_items.item_id
+		)
+	);
+
+	RETURN best_item;
+
+END;
+/
+
+Output: 2002 - 5, 2006 - 1, 2017 - 4
+
+-- Task 3
+
+CREATE OR REPLACE FUNCTION profit_estimation (in_year INT)
+RETURN INT
+IS
+
+rev_gen INT := 0;
+rev_lost INT := 0;
+ratio FLOAT := -1;
+
+BEGIN
+
+	SELECT SUM(order_items.quantity * order_items.ppu)
+	INTO rev_gen
+	FROM orders, order_items
+	WHERE orders.order_year = in_year AND orders.status = 1 AND orders.order_id = order_items.order_id;
+
+	SELECT SUM(order_items.quantity * order_items.ppu)
+	INTO rev_lost
+	FROM orders, order_items
+	WHERE orders.order_year = in_year AND orders.status = 0 AND orders.order_id = order_items.order_id;
+
+	ratio := ((rev_gen/(rev_gen + rev_lost)) * 100);
+	
+	IF ratio >= 50 AND ratio <= 65 THEN
+		DBMS_OUTPUT.PUT_LINE('Average Year');
+	ELSIF ratio >= 66 AND ratio <= 79 THEN
+		DBMS_OUTPUT.PUT_LINE('Good Year');
+	ELSIF ratio >= 79 THEN
+		DBMS_OUTPUT.PUT_LINE('Excellent Year');
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('A Year of Losses');
+	END IF;
+
+	RETURN rev_gen;
+
+END;
+/
+
+Output: 2002 - 6117(A Year of Losses), 2006 - 1433(A Year of Losses) , 2017 - 7821(Good Year)

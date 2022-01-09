@@ -1,0 +1,35 @@
+create table Employee
+(
+	employeeID int,
+	name varchar2(20),
+	age int,
+	phoneNum int,
+	constraint EmployeePK primary key (employeeID)
+);
+
+create table Customer
+(
+	customerID int,
+	name varchar2(20),
+	age int,
+	serverID int,
+	constraint CustomerPK primary key (customerID),
+	constraint serverFK foreign key (serverID) references Employee (employeeID)
+);
+
+create table Product
+(
+	productID int,
+	name varchar2(20),
+	price int,
+	constraint ProductPK primary key (productID)
+);
+
+create table CustomerProduct
+(
+	customerID int,
+	productID int,
+	constraint CustomerProductPK primary key (customerID, productID),
+	constraint customerFK foreign key (customerID) references Customer (customerID),
+	constraint productFK foreign key (productID) references Product (productID)
+);

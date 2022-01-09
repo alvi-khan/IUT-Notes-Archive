@@ -1,0 +1,48 @@
+2. Creating user and granting privileges:
+
+CONN SYSTEM;
+CREATE USER USER180041000 IDENTIFIED BY iutcse;
+GRANT CREATE SESSION, RESOURCE TO USER180041000;
+DISCONNECT;
+
+I. Creating two tables:
+
+CONN USER180041000;
+
+CREATE TABLE Students
+(
+Student_ID INT PRIMARY KEY,
+Name VARCHAR2 (30),
+Semester VARCHAR2 (5),
+No_of_course_taken INT,
+Department VARCHAR2 (3),
+Head_of_dept VARCHAR2 (30)
+);
+
+CREATE TABLE Marksheet
+(
+Student_ID INT,
+Course VARCHAR2 (30),
+Marks INT
+);
+
+II. Proving that primary key is working:
+
+INSERT INTO STUDENTS VALUES(150001, 'Sullivan', '3rd', 12, 'CSE', 'Lucifer');
+INSERT INTO STUDENTS (Student_ID) VALUES (150001);
+ 
+IV. Inserting data and showing tables:
+
+INSERT INTO STUDENTS VALUES(152206, 'Lazarus', '2nd', 8, 'EEE', 'Dryad'), (152208, 'Ishtar', '2nd', 9, 'EEE', 'Dryad');
+INSERT INTO STUDENTS (Student_ID, Name, No_of_course_taken, Department, Head_of_dept) VALUES (151110, 'Kaya', 7, 'MCE', 'Indriva');
+INSERT INTO STUDENTS VALUES (150020, 'Asmodeus', '7th', 31, 'CSE', 'Lucifer');
+INSERT INTO MARKSHEET VALUES (150005, 'DBMS', 70), (150020, 'Data Structures', 78), (150005, 'Programming', 63), (150007, 'Sociology', 82), (150023, 'Programming', 74), (150008, 'Discrete Math', 55), (150023, 'Data Mining', 87);
+
+V. Show all records using query:
+
+SELECT * FROM STUDENTS;
+SELECT * FROM MARKSHEET;
+
+VI. Add extra row:
+
+INSERT INTO MARKSHEET VALUES (150025, 'Physics', '68');

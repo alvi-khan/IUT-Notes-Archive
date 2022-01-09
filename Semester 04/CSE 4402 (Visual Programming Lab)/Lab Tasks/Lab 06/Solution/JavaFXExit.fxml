@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="320.0" prefWidth="480.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.JavaFXExit_Controller">
+    <stylesheets>
+        <URL value="@javafx.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="noButton" layoutX="56.0" layoutY="232.0" mnemonicParsing="false" onAction="#exitStage" prefHeight="39.0" prefWidth="71.0" text="No" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="yesButton" layoutX="305.0" layoutY="232.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="39.0" prefWidth="71.0" text="Yes" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="176.0" layoutY="110.0" text="Confirm Exit">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

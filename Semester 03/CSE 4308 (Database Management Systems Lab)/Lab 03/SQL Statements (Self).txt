@@ -1,0 +1,124 @@
+Task 1:
+
+Create User:
+
+connect system
+test123
+
+create user a00 identified by password123;
+grant create session, resource to a00;
+
+disc;
+
+Create Relations:
+
+conn a00;
+password123;
+
+create table Department
+(
+Dept_Name varchar2(3),
+Dept_ID int,
+Established_Year int,
+constraint Dept_Name_Check primary key (Dept_Name)
+);
+
+create table Student
+(
+Student_ID int,
+Name varchar2(10),
+cgpa numeric(3, 2),
+Hometown varchar2(20),
+Mobile_no varchar2(15),
+S_Dept varchar2(3),
+constraint Student_ID_Check primary key (Student_ID),
+constraint Dept_Name_Foreign_Check foreign key (S_Dept) references Department(Dept_Name)
+);
+
+create table Employee
+(
+E_ID int,
+Name varchar2(10),
+Salary numeric(10, 2),
+Hometown varchar2(20),
+E_Dept varchar2(3),
+constraint E_ID_Check primary key (E_ID),
+constraint Dept_Name_Foreign_Key_Check foreign key (E_Dept) references Department (Dept_Name)
+);
+
+Add Data:
+
+insert into Department values ('CSE', 41, 1995);
+insert into Department values ('EEE', 21, 1993);
+insert into Student values (1, 'A', 3.00, 'Some Place', '1234567890', 'CSE');
+insert into Student values (2, 'B', 3.75, 'Other Place', '012432312', 'EEE');
+insert into Employee values (1, 'A', 2000.00, 'Some Place', 'CSE');
+
+Check Constraints:
+
+insert into Department values ('CSE', 42, 1995);
+insert into Student values (1, 'C', 3.00, 'Some Place', '1234567890', 'CSE');
+insert into Student values (3, 'C', 3.00, 'Some Place', '123456789', 'CEE');
+insert into Employee values (1, 'B', 2000.00, 'Some Place', 'CSE');
+insert into Employee values (2, 'B', 2000.00, 'Some Place', 'CEE');
+
+Display Records:
+
+select Student_ID, Dept_ID from Student, Department;
+
+Task 2:
+
+Create Relations:
+
+create table Instructor
+(
+I_ID int,
+Name varchar2(10),
+Salary numeric(10, 2),
+Hometown varchar2(20),
+I_Dept varchar2(3),
+constraint I_ID_Check primary key (I_ID),
+constraint I_ID_to_Dept_Name_Check foreign key (I_Dept) references Department (Dept_Name)
+);
+
+create table Course
+(
+Department varchar2(3),
+Name varchar2(10),
+Taught_By int,
+Credit numeric (3, 2),
+Course_ID int,
+constraint Course_ID_Check primary key (Course_ID, Department),
+constraint Course_to_Dept_Name_Check foreign key (Department) references Department (Dept_Name),
+constraint Cout_to_Instructor_Check foreign key (Taught_By) references Instructor (I_ID)
+);
+
+Add Data and Check Constraints:
+
+insert into Instructor values (1, 'A', 1000.00, 'Some Place', 'CSE');
+insert into Instructor values (1, 'B', 1000.00, 'Some Place', 'CSE');
+insert into Instructor values (2, 'B', 1000.00, 'Some Place', 'CEE');
+ 
+insert into Course values ('CSE', 'CSE 4308', 1, 3.00, 1);
+insert into Course values ('EEE', 'CSE 4308', 1, 3.00, 1);
+insert into Course values ('CSE', 'CSE 4308', 1, 3.00, 2);
+insert into Course values (1, 'CSE', 'CSE 4307', 1, 3.00);
+insert into Course values (2, 'CEE', 'CSE 4307', 1, 3.00);
+insert into Course values (2, 'CSE', 'CSE 4307', 2, 3.00);
+
+Task 3:
+
+Drop Column:
+
+alter table Employee drop column Hometown;
+
+Add Column:
+
+alter table Department add Building int;
+
+Drop Column:
+
+alter table Course drop column Course_ID;
+alter table Course drop constraint primary key;
+alter table Course drop column Course_ID;
+alter table Course add constraint Course_Name_Check primary key (Name, Department);

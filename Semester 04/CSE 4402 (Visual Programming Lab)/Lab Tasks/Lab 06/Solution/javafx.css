@@ -1,0 +1,57 @@
+.mainFxmlClass
+{
+    -fx-background-color: #212121;  /* have to curve both background and border */
+    -fx-background-radius: 10px;
+    -fx-border-color: black, white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-border-insets: 0 0 0 0, 2px 2px 2px 2px;
+}
+.button
+{
+    -fx-pref-width: 120px;
+    -fx-pref-height: 50px;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(one-pass-box, #000000, 10, 0, 0, 5); /* shadow beneath button to make it look like button is raised */
+}
+
+.button:pressed
+{
+    -fx-effect: none;
+    -fx-background-insets: 1px 0 -1px 0, 1px 0 -1px 0;  /* remove shadow and make button move down to make it look like button is being pressed */
+}
+
+#exitButton, #yesButton
+{
+    -fx-background-color: #D25068;
+}
+
+
+#exitButton:hover, #yesButton:hover
+{
+    -fx-background-color: #F66C7B;
+}
+
+#nextButton, #prevButton, #noButton
+{
+    -fx-background-color: #3EACBA;
+}
+
+#nextButton:hover, #prevButton:hover, #noButton:hover
+{
+    -fx-background-color: #48C6D4;;
+}
+
+#prevButton
+{
+    -fx-min-height: 70px;   /* prev button has more text */
+}
+
+.label
+{
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(one-pass-box, #000000, 10, 0, 0, 5);
+}
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFX.JavaFX_Controller">
+   <children>
+      <Button fx:id="exitButton" layoutX="255.0" layoutY="293.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="54.0" prefWidth="89.0" text="Exit" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="123.0" layoutY="72.0" prefHeight="35.0" prefWidth="175.0" text="Enter username:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameOutput" layoutX="300.0" layoutY="182.0" prefHeight="35.0" prefWidth="263.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="230.0" layoutY="182.0" prefHeight="35.0" prefWidth="70.0" text="Hello, " textAlignment="RIGHT">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userInput" layoutX="302.0" layoutY="64.0" onKeyTyped="#displayName" prefHeight="51.0" prefWidth="231.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

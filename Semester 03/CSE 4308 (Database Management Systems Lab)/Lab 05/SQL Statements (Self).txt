@@ -1,0 +1,89 @@
+@D:/Citizen_DDL_DML.sql
+
+1.
+
+select max (salary) from citizen;
+
+2.
+
+select c_name, age from citizen where age = (select max(age) from citizen where gender = 'Male') and gender = 'Male';
+
+3.
+
+select c_name, age from citizen where age = (select min(age) from citizen where gender = 'Female') and gender = 'Female';
+
+4.
+
+select c_name, salary from citizen where salary = (select max(salary) from citizen where occupation = 'Teacher') and occupation = 'Teacher';
+
+5.
+
+select c_name, salary from citizen where salary = (select max(salary) from citizen where occupation = 'Doctor') and occupation = 'Doctor';
+
+6.
+
+select c_name from citizen where c_name like '%a%';
+
+7.
+
+select c_name from citizen where c_name like '__y%';
+
+8.
+
+select avg(age) from citizen;
+
+9.
+
+select sum(salary) from citizen where occupation = 'Teacher';
+
+10.
+
+select avg(salary) from citizen where occupation = 'Student';
+
+11.
+
+select c_name from citizen where salary = (select max(salary) from citizen where occupation = 'Student' and gender = 'Female') and occupation = 'Student' and gender = 'Female';
+
+12.
+
+select count(c_home) from (select distinct c_home from citizen where c_home like '%tg%');
+
+13.
+
+select max(salary) from (select salary from citizen where c_name like 'A%');
+
+14.
+
+select * from citizen where salary = (select max(salary) from citizen where occupation = 'Teacher') and occupation = 'Teacher';
+
+15.
+
+select avg(age) from citizen where occupation = 'Student';
+
+16.
+
+select c_home, count(c_home) as citizen_num from citizen group by c_home;
+
+17.
+
+select occupation, max(salary) from citizen group by occupation;
+
+18.
+
+select occupation, avg(salary) from citizen where gender = 'Male' group by occupation;
+
+19.
+
+select occupation, avg(salary) from citizen where gender = 'Female' group by occupation having avg(salary) >= 10000;
+
+20.
+
+select count(salary) from citizen where salary not between 40000 and 50000;
+
+21.
+
+select count(salary) from citizen where salary between 20000 and 50000 and c_home = 'Ctg';
+
+22.
+
+select c_home, avg(salary) from citizen where c_home in (select c_home from (select c_home, count(c_name) from citizen group by c_home having count(c_name) >= 2)) group by c_home;

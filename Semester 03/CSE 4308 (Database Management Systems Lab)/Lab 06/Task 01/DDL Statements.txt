@@ -1,0 +1,45 @@
+create table Station
+(
+	name varchar2(20),
+	platforms int,
+	ticketCounters int,
+	city varchar2(20),
+	constraint StationPK primary key (name)
+);
+
+create table Train
+(
+	departure varchar2(20),
+	arrival varchar2(20),
+	departureTime int,
+	constraint TrainPK primary key (departure, arrival, departureTime),
+	constraint departureFK foreign key (departure) references Station (name),
+	constraint arrivalFK foreign key (arrival) references Station (name)
+);
+
+create table Ticket
+(
+	ticketID int,
+	departure varchar2(20),
+	arrival varchar2(20),
+	departureTime int,
+	date int,
+	customerID int,
+	/*ticket initially created with NULL customerID and later set after customer becomes available*/
+	seat int,
+	constraint TicketPK primary key (ticketID),
+	constraint departureFK foreign key (departure) references Station (name),
+	constraint arrivalFK foreign key (arrival) references Station (name),
+	constraint customerFK foreign key (customerID) references Customer (customerID)
+);
+
+create table Customer
+(
+	customerID int,
+	name varchar2(20),
+	age int,
+	NID int,
+	ticketID int not null unique,
+	constraint CustomerPK primary key (customerID),
+	constraint ticketFK foreign key (ticketID)
+);

@@ -1,0 +1,57 @@
+Heap
+	Heapify: O(log n)
+	Build Max Heap: O(nlog n) / O(n)
+	Heapsort: O(nlog n)
+
+Priority Queue
+	Extract Max: O(log n)
+	Change Key: O(log n)
+	Insert Key: O(log n)
+
+Linked List
+	Create Node: O(1)
+	Prepend: O(1)
+	Append: O(n)
+	Insert:	O(n)
+	Remove Head: O(1)
+	Remove Node: O(n)
+	Display: O(n)
+	Flip List: O(n)
+
+BST
+	All Operations: O(height)
+
+AVL Tree
+	All Operations:	O(log n)
+
+Trie
+	Insert:	O(n)	n - length of string
+	Search:	O(n)	n - length of string
+	Delete: O(n)	n - length of string
+Hashing
+
+	All Operations:	O(1)
+
+	Open Hashing:
+		Insert:	O(1)
+		Search:	O(1 + ϕ)	ϕ - elements in current node
+		Delete:	O(1 + ϕ)	ϕ - elements in current node
+	
+	Linear Probing:
+		Average Cells Examined During Insertion:	(1+1/(1-λ)^2)/2		λ - load factor
+	
+	Double Hashing:
+		Good Collision Resolution Strategy:	f(i) = i*(R-(x%R))	R - Any prime number, i - iterator, x - key
+	
+	Map/MultiMap:
+		All Operations:	O(log n)	n - total number of elements
+	
+	Unordered Map/MultiMap:
+		All Operations: O(1)
+
+
+Segment Tree
+
+	Query:	O(log n)	n - total number of elements
+	Update:	O(log n)	n - total number of elements
+	Insert:	O(n log n)	n - total number of elements
