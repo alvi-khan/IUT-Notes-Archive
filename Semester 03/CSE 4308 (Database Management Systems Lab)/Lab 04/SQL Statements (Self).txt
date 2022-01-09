@@ -1,0 +1,114 @@
+conn system
+test 123
+
+create user USER00 identified by password123;
+grant create session, resource to user00;
+
+disc
+
+conn user00
+password123
+
+@D:/Citizen_DDL_DML.sql
+
+1.
+
+select * from citizen;
+
+2.
+
+select c_name, age, occupation from citizen;
+
+3.
+
+select c_name from citizen where c_home = 'Dhaka';
+
+4.
+
+select * from citizen where salary > 45000;
+
+5.
+
+select c_name, c_home from citizen where age < 45;
+
+6.
+
+select * from citizen where gender = 'Female';
+
+7.
+
+select * from citizen
+where occupation in ('Engineer', 'Doctor', 'Retired');
+
+8.
+
+select c_id, c_name, salary from citizen
+where occupation in ('Musician', 'Business');
+
+9.
+
+select * from citizen
+where occupation in ('Doctor', 'Engineer');
+
+10.
+
+select * from citizen where occupation = 'Doctor' order by salary;
+
+11.
+
+select c_name, age from citizen order by age desc, c_name asc;
+
+12.
+
+select distinct c_home as Unique_District from citizen;
+
+13.
+
+select c_name, salary*1.4 from citizen where not occupation = 'Retired';
+
+14.
+
+select * from citizen where gender = 'Male' and salary >50000;
+
+15.
+
+select * from citizen where salary between 30000 and 50000;
+
+16.
+
+select salary from citizen where age not between 30 and 55;
+
+17.
+
+create table updated_citizen
+(
+	C_ID NUMBER (3),
+	NAME VARCHAR2 (10),
+	C_HOME VARCHAR2 (10),
+	AGE NUMBER (2),
+	OCCUPATION VARCHAR2 (15),
+	GENDER VARCHAR2 (6),
+	NEW_SALARY NUMBER
+);
+
+insert into updated_citizen select * from citizen;
+
+update updated_citizen set c_home = 'Cumilla' where c_home = 'Comilla';
+
+select * from updated_citizen;
+
+18.
+
+delete from updated_citizen where ROWNUM < 11;
+
+select * from updated citizen;
+
+19.
+
+update updated_citizen set age = age + 10, new_salary = new_salary*1.3;
+
+select * from updated_citizen;
+
+20.
+
+select name, salary, new_salary from citizen, updated_citizen where citizen.c_id = updated_citizen.c_id;

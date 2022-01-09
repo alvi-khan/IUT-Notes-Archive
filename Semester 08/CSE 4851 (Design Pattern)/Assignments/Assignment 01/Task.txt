@@ -1,0 +1,5 @@
+1. This assignment will be considered as Quiz 2
+2. Your task is to combine there patterns(Strategy and Factory) or (Decorator and Factory) to solve a scenario.
+3. The following link will help you to solve the assignment. Hence you cannot use the scenario mentioned in the given link.
+https://vinodnambiar.wordpress.com/2011/09/29/service-composition/
+4. You have to submit the source code as a folder within 28 February

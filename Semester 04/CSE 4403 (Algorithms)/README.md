@@ -1,0 +1,30 @@
+<link href="../../style.css" rel="stylesheet">
+
+# CSE 4403 (Algorithms) [(Download ⬇️)](https://minhaskamal.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Falvi-khan%2FIUT-Notes-Archive%2Ftree%2Fmain%2F/Semester%2004/CSE%204403%20%28Algorithms%29)
+
+## [⬇️ ](https://minhaskamal.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Falvi-khan%2FIUT-Notes-Archive%2Ftree%2Fmain%2F/Semester%2004/CSE%204403%20%28Algorithms%29/Algorithms%20%28May%20Contain%20Mistakes%29)Algorithms (May Contain Mistakes)
+- [💻 Bellman-Ford Algorithm.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Bellman-Ford%20Algorithm.cpp)
+- [💻 Binary Search.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Binary%20Search.cpp)
+- [💻 Breadth First Search.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Breadth%20First%20Search.cpp)
+- [💻 Depth First Search.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Depth%20First%20Search.cpp)
+- [💻 Dijkstra's Algorithm.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Dijkstra%27s%20Algorithm.cpp)
+- [💻 Floyd-Warshall Algorithm.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Floyd-Warshall%20Algorithm.cpp)
+- [💻 Frievald's Algorithm.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Frievald%27s%20Algorithm.cpp)
+- [💻 Merge Sort.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Merge%20Sort.cpp)
+- [💻 Optimum Binary Search Tree.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Optimum%20Binary%20Search%20Tree.cpp)
+- [💻 Paranoid Quick Sort.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Paranoid%20Quick%20Sort.cpp)
+- [💻 Quick Sort.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Quick%20Sort.cpp)
+- [💻 Radix Sort.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Radix%20Sort.cpp)
+- [💻 Topological Sort.cpp](./Algorithms%20%28May%20Contain%20Mistakes%29/Topological%20Sort.cpp)
+
+## [⬇️ ](https://minhaskamal.github.io/DownGit/#/home?url=https:%2F%2Fgithub.com%2Falvi-khan%2FIUT-Notes-Archive%2Ftree%2Fmain%2F/Semester%2004/CSE%204403%20%28Algorithms%29/Notes)Notes
+- [📄 Advanced Dynamic Programming](./Notes/Advanced%20Dynamic%20Programming.docx)
+- [📄 Complexity Classes](./Notes/Complexity%20Classes.docx)
+- [📄 Disjoint-Set Union](./Notes/Disjoint-Set%20Union.docx)
+- [📄 Divide and Conquer](./Notes/Divide%20and%20Conquer.docx)
+- [📄 Dynamic Programming](./Notes/Dynamic%20Programming.docx)
+- [📄 Graph Traversal Algorithms](./Notes/Graph%20Traversal%20Algorithms.docx)
+- [📄 Greedy Algorithms](./Notes/Greedy%20Algorithms.docx)
+- [📄 Incremental Improvement Algorithms](./Notes/Incremental%20Improvement%20Algorithms.docx)
+- [📄 Randomized Algorithms](./Notes/Randomized%20Algorithms.docx)
+- [📄 Recursion Trees](./Notes/Recursion%20Trees.docx)

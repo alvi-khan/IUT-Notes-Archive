@@ -1,0 +1,21 @@
+Task 1:
+Implement the morphological Dilation and Erosion on Binary images.
+Show the effects of repeated applications of both Dilation and Erosion.
+Note: You cannot use built-in libraries.
+
+Task 2:
+Granulometry is a field that deals with determining the size distribution of particles in an image. Determine the sizes of granules in Fig. 9.41(a) which is an image of wood dowel plugs of two dominant sizes.
+Apply smoothing on the given image before you apply the Opening operations with circular SEs of variables sizes.
+
+Task 3: Complete the solutions to exercise 9.34 of Chapter 09 (Textbook)
+Consider the image given, which shows a region of small circles enclosed by a region of larger circles. Locate the boundary between those distinct texture regions.
+
+Task 4: Complete the solutions to exercise 9.36 of Chapter 09 (Textbook)
+A preprocessing step in an application of microscopy is concerned with the issue of isolating individual round particles from similar particles that overlap in
+groups of two or more particles (see following image). Assuming that all particles are of the same size, propose a morphological algorithm that produces three
+images consisting respectively of 
+(a) Only of particles that have merged with the boundary of the image.
+(b) Only overlapping particles.
+(c) Only nonoverlapping particles.
+
+Include your code and output together with explanations in your report.

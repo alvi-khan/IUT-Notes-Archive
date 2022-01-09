@@ -1,0 +1,11 @@
+Lex and Yacc: Expression Conversion
+
+Assignment 3a:
+
+Write Lex/Yacc programs which can convert infix expression to postfix expression. The program should support both number and identifier. Identifier
+can be of any length string containing only alphabets.
+
+Assignment 3b:
+
+Write Lex/Yacc programs which can convert postfix expression to infix expression. The program should support both number and
+identifier. Identifier can be of any length string containing only alphabets.

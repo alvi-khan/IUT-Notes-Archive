@@ -1,0 +1,19 @@
+Task # 01 (Linear Filter)
+For this task, use the image: "Fig0333(a)(test_pattern_blurring_orig)" from Chapter 03 zip
+a) Implement the Smoothing Operation with Average Filter (Box & Weighted Average filters)
+b) Change the user defined parameters to obtain different levels of blurring effects.
+
+Task # 02 (Non-Linear Filter)
+For this task, use the image : "Fig0335(a)(ckt_board_saltpep_prob_pt05)" from Chapter 03 zip
+a) Use a function (built-in or your own) to artificially add noise to the image.
+b) Implement the Noise (Salt&Pepper) Reduction technique using Median Filter ( or Max/Min)
+c) Analyze the changes in result by varying the noise amount. Change filter size too.
+
+Task # 03 (Image Sharpening)
+For this task, use the image : "Fig0338(a)(blurry_moon)"
+a) Compute edge responses using Laplacian filter.
+b) Display Laplacian image after scaling. 
+c) Produce the sharp output using Laplacian response: g = f + c x (f*w)
+d) Vary user defined parameter c to obtain different levels of sharpness.
+
+Submit a report explaining your implementation and the results obtained. Mention the effects of changing the parameters as stated in the tasks.

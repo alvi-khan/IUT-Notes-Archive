@@ -1,0 +1,175 @@
+% additional parameters can be used with the document class to define things like the page and font size
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}   % required for images
+\usepackage{subcaption} % required for sub-images
+\usepackage[margin=1in]{geometry}
+% the geometry package allows us to specify margins
+% we can also specify specific margins as below
+% \usepackage[top=1in, bottom=1in]{geometry}
+% when binding the paper (e.g. for a thesis), we can use the following command to add the required margins on the correct side of each page
+% \usepackage[bindingoffset=1cm]{geometry}
+
+\title{Title of the Paper}
+\author{My Name}
+\date{December 04, 2021}
+
+\begin{document}
+
+\maketitle
+
+Please refer to the comments of the code for further information, especially in the header.
+
+\bigskip
+
+We can create a table of contents as below.
+\tableofcontents
+
+\bigskip
+
+We can also create a list of all the figures used in the paper as below.
+\listoffigures
+
+\newpage
+
+\begin{abstract}
+    We can create a separate abstract section like this.
+\end{abstract}
+
+\section{Section 1}
+A reference has been used here. It requires specifying a label for the section, which can be used in the reference.
+
+\label{sec:sec1}
+This is Section \ref{sec:sec1}.
+
+This reference will automatically reflect changes in the section title.
+
+\subsection{Subsection 1}
+This is subsection 1.
+
+\subsubsection{SubSubSection}
+This is subsubsection 1.
+
+\section{Bullet Points}
+We can create a bulleted list like this:
+\begin{itemize}
+    \item Item 1
+    \begin{itemize}
+        \item Item 1.1
+    \end{itemize}
+\end{itemize}
+
+We can also have custom bullet points.
+\begin{itemize}
+    \item[*] Item 1
+\end{itemize}
+
+We can create a numbered list like this:
+\section{Numbered Lists}
+\begin{enumerate}
+    \item Item 1
+    \begin{enumerate}
+        \item Item 1.1
+    \end{enumerate}
+    \item Item 2
+\end{enumerate}
+
+\section{Images}
+We can insert an image like this. Note that in Overleaf, we must upload the image first. Also note that this requires the \textbf{graphicsx} package.
+
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics{image1.jpg}
+    \caption{Initial Image}
+\end{figure}
+
+The position of the image on the page can be adjusted using extra parameters. \textbf{h} refers to this exact position, \textbf{t} refers to the top of the page and \textbf{b} refers to the bottom of the page. By default, images go to the top of the page.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics{image1.jpg}
+    \caption{Image Position Example}
+\end{figure}
+
+We can also specify the exact size of the image. The scale parameter scales the image, the width parameter specifies a specific width and the height parameter specifies a specific height.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{image1.jpg}
+    \caption{Scaled Down Image Example}
+\end{figure}
+
+We can also tell the image to be scale based on the width of the text area.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{image1.jpg}
+    \caption{Image Scaled Based on Text Width Example}
+\end{figure}
+
+\newpage
+
+We can also use labels to make references to images.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{image1.jpg}
+    \caption{Image Reference Example}
+    \label{fig:imageref}
+\end{figure}
+
+This is a reference to figure \ref{fig:imageref}.
+By convention, the label for figure references is \textbf{fig:referencename}.
+
+We do not always use the format \textbf{figure 5} though. We may want to use \textbf{fig. 5} instead. In fact, many publishers require this. We can specify which one to use like this:
+
+This is a reference to \figurename~\ref{fig:imageref}.
+
+The tilde symbol has been used to add a space.
+
+We can adjust the horizontal position of the image like this:
+
+\begin{figure}[h]
+    \flushright
+    \includegraphics[scale=0.5]{image1.jpg}
+    \caption{Image Position Example}
+\end{figure}
+
+We could also have used flushleft.
+
+And finally, we can have multiple images within an image, each with a separate caption, like this. Note that this requires the \textbf{subcaption} package.
+
+\begin{figure}
+    \centering
+    \subfloat[Subfigure 1]{
+        \includegraphics[width=0.4\textwidth]{image1.jpg}
+    }
+    \subfloat[Subfigure 2]{
+        \includegraphics[width=0.4\textwidth]{image1.jpg}
+    }
+    \caption{Subfigure Example}
+\end{figure}
+
+\newpage
+
+We can also put the subfigures vertically like this:
+
+\begin{figure}[h]
+    \centering
+    \subfloat[Subfigure 1]{
+        \includegraphics[width=0.4\textwidth]{image1.jpg}
+    }
+    \subfloat[Subfigure 2]{
+        \includegraphics[width=0.4\textwidth]{image1.jpg}
+    }
+    \hspace{1cm}
+    \subfloat[Subfigure 3]{
+    \includegraphics[width=0.4\textwidth]{image1.jpg}
+    }
+    \caption{Vertical Subfigures Example}
+    
+\end{figure}
+
+\end{document}

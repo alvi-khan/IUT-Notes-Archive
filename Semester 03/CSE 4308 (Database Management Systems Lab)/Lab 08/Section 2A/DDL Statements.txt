@@ -1,0 +1,131 @@
+/* task 1 and 2 */
+
+CREATE TABLE citizen
+(
+	nid INT,
+	name VARCHAR2(20),
+	dob DATE,
+	bld_grp VARCHAR2(3),
+	address VARCHAR2(30),
+	profession VARCHAR2(10),
+	salary INT,
+	CONSTRAINT citizen_pk PRIMARY KEY (nid)
+);
+
+CREATE TABLE license
+(
+	l_no INT,
+	nid INT,
+	issue_date DATE,
+	expiry_date DATE,
+	CONSTRAINT license_pk PRIMARY KEY (l_no),
+	CONSTRAINT lic_nid_fk FOREIGN KEY (nid) REFERENCES citizen (nid) ON DELETE CASCADE
+);
+
+/* if citizen removed, license is removed */
+
+CREATE TABLE hospital
+(
+	name VARCHAR2(10),
+	location VARCHAR2(30),
+	estd_year DATE,
+	tot_cap INT,
+	CONSTRAINT hospital_pk PRIMARY KEY (name)
+);
+
+CREATE TABLE hosp_admission
+(
+	hosp_name VARCHAR2(10),
+	nid INT,
+	admit_date DATE,
+	admit_time TIME,
+	diagnosis VARCHAR2(30),
+	CONSTRAINT admission_pk PRIMARY KEY (hosp_name, nid, admit_date, admit_time),
+	CONSTRAINT hospital_fk FOREIGN KEY (hosp_name) REFERENCES hospital (name),
+	CONSTRAINT admit_nid_fk FOREIGN KEY (nid) REFERENCES citizen (nid)
+);
+
+/* ignoring cascading delete - relationship table */
+
+CREATE TABLE publisher
+(
+	name VARCHAR2(10),
+	country VARCHAR2(10),
+	estd_year DATE,
+	reputation INT,
+	CONSTRAINT publisher_pk PRIMARY KEY (name, country)
+);
+
+CREATE TABLE book
+(
+	title VARCHAR2(10),
+	author VARCHAR2(10),
+	publisher_name VARCHAR2(10),
+	publisher_country VARCHAR2(10),
+	price INT,
+	study_area VARCHAR2(20),
+	CONSTRAINT book_pk PRIMARY KEY (title, author),
+	CONSTRAINT publisher_fk FOREIGN KEY (publisher_name, publisher_country) REFERENCES publisher (name, country)
+);
+
+/* if publisher stops operating, books already published still exist; should not cascade delete */
+
+CREATE TABLE book_borrow
+(
+	book_title VARCHAR2(10),
+	book_author VARCHAR2(10),
+	citizen_nid INT,
+	borrow_date DATE,
+	return_date DATE,
+	CONSTRAINT borrow_pk PRIMARY KEY (book_title, book_author, citizen_nid, borrow_date),
+	CONSTRAINT book_fk FOREIGN KEY (book_title, book_author) REFERENCES book (title, author),
+	CONSTRAINT citizen_fk FOREIGN KEY (citizen_nid) REFERENCES citizen (nid)
+);
+
+/* ignoring cascade delete - relationship table */
+
+/* task 3 */
+
+CREATE OR REPLACE VIEW borrow_record AS
+SELECT book_borrow.citizen_nid, citizen.name, book_borrow.book_title, book_borrow.book_author, book.study_area, book.publisher_name, book.publisher_country
+FROM book_borrow, citizen, book
+WHERE ((citizen.nid = book_borrow.citizen_nid) AND (book.title = book_borrow.book_title) AND (book.author = book_borrow.book_author));
+
+CREATE OR REPLACE VIEW citizen_borrowal_count AS
+SELECT citizen_nid AS NID, count(citizen_nid) AS Count FROM borrow_record GROUP BY citizen_nid;
+
+/* task 4 */
+
+CREATE OR REPLACE VIEW license_holder_info AS
+SELECT license.l_no, license.issue_date, license.expiry_date, citizen.name, citizen.profession
+FROM citizen, license
+WHERE citizen.nid = license.nid;
+
+/* task 5 */
+
+/* Note: Must grant dba to current user to be able to create roles/users */
+
+CREATE ROLE role_edit_lib;
+GRANT SELECT ON book TO edit_lib;
+GRANT INSERT ON book TO edit_lib;
+GRANT DELETE ON book TO edit_lib;
+GRANT UPDATE ON book TO edit_lib;
+GRANT SELECT ON publisher TO edit_lib;
+GRANT INSERT ON publisher TO edit_lib;
+GRANT DELETE ON publisher TO edit_lib;
+GRANT UPDATE ON publisher TO edit_lib;
+
+CREATE ROLE role_read_admit;
+GRANT SELECT ON hosp_admission TO read_admit;
+
+CREATE ROLE role_read_citizen;
+GRANT SELECT ON citizen TO read_citizen;
+GRANT SELECT ON license TO citizen;
+
+CREATE USER lib_admin IDENTIFIED BY password;
+CREATE USER hosp_clerk IDENTIFIED BY password;
+CREATE USER reg_citizen IDENTIFIED BY password;
+
+GRANT role_edit_lib TO lib_admin;
+GRANT role_read_admit TO hosp_clerk;
+GRANT role_read_citizen TO reg_citizen;

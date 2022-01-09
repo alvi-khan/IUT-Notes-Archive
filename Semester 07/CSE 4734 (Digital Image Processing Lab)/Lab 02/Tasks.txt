@@ -1,0 +1,18 @@
+Task #1
+Implement nonlinear Transformation functions:
+i. Log Transformation
+ii. Power-law Transformation
+* Which function is suitable for which type of images?
+* Why is intensity scaling required before display?
+
+Task #2
+Implement Global Histogram Equalization on gray-scale images.
+* Why repeated application of HE doesn't produce any further improvements on output images?
+
+Task #3
+Implement Local Histogram Equalization (LHE) on gray scale images. 
+* Why do you have annoying side effects at the boundary of local image regions.
+
+Analyze the results and write your own discussion on them.
+
+Submit both your codes and report.

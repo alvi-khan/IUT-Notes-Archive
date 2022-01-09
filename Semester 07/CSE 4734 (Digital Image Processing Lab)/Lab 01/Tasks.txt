@@ -1,0 +1,13 @@
+Task #1
+(a) Write a function that takes a grayscale image as argument and generates the histogram of that grayscale image. You can use any suitable grayscale image from here: https://www.imageprocessingplace.com/DIP-3E/dip3e_book_images_downloads.htm.
+
+(b) Take any suitable color image and divide it into 3 separate channels. Display the individual channels in their own color. For example, the red channel should generate a red image, where the intensity of red in each pixel will depend on how much red is present in that pixel in the original color image.
+
+(c) Use your previously written histogram function from Task 1(a) to generate the histogram of color image. Since color images have 3 channels, so you will have 3 histograms. Analyze the histograms to determine which color is more dominant in the image.
+
+Task#2
+(a) Write a function that takes an grayscale image as argument and returns the negative of that image. g(x,y) = Lmax - f(x,y) ; where Lmax=255 for 8-bit image.
+	
+(b) Extend your function so that it works for color images too. 
+
+Submit the compiled ipynb file with your analysis and all the outputs generated as your report.

@@ -1,0 +1,105 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+\begin{document}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|L{2cm} L{4cm} L{6.5cm} r|}
+        \hline
+         Reasoning & Description & Example & Percentage\\
+         \hline
+         \multirow{2}{1.5cm}{Negation} & \multirow{2}{4cm}{Negation word inserted or removed.} & Sentence: \textit{“Several hospital pharmacies have decided to outsource high risk preparations . . . ”} & \multirow{2}{*}{9\%} \\
+          & & Question: \textit{“What types of pharmacy functions have \textbf{never} been outsourced?”} & \\
+         \hline
+         \multirow{2}{1.5cm}{Antonym} & \multirow{2}{4cm}{Antonym used.} & S: \textit{“the extinction of the dinosaurs. . . allowed the tropical rainforest to spread out across the continent.”} & \multirow{2}{*}{20\%}\\
+         & & Q: \textit{“The extinction of what led to the \textbf{decline} of rainforests?”} & \\
+         \hline
+         \multirow{2}{1.5cm}{Entity Swap} & \multirow{2}{4cm}{Entity, number, or date replaced with other entity, number, or date.} & S: \textit{“These values are much greater than the 9–88 cm as projected . . . in its Third Assessment Report.”} & \multirow{2}{*}{21\%}\\
+         & & Q: \textit{“What was the projection of sea level increases in the \textbf{fourth assessment report}?”} & \\
+         \hline
+         \multirow{2}{1.5cm}{Mutual Exclusion} & \multirow{2}{4cm}{Word or phrase is mutually exclusive with something for which an answer is present.} & S: \textit{“BSkyB. . . waiv[ed] the charge for subscribers whose package included two or more premium channels.”} & \multirow{2}{*}{15\%}\\
+         & & Q: \textit{“What service did BSkyB \textbf{give away for free unconditionally}?”} & \\
+         \hline
+         \multirow{2}{1.5cm}{Impossible Condition} & \multirow{2}{4cm}{Asks for condition that is not satisfied by anything in the paragraph.} & S: \textit{“Union forces left Jacksonville and confronted a Confederate Army at the Battle of Olustee. . . Union forces then retreated to Jacksonville and held the city for the remainder of the war.”} & \multirow{2}{*}{4\%}\\
+         & & Q: \textit{“After what battle did Union forces leave Jacksonville \textbf{for good}?”} & \\
+         \hline
+         \multirow{2}{1.5cm}{Other Neutral} & \multirow{2}{4cm}{Other cases where the paragraph does not imply any answer.} & S: \textit{“Schuenemann et al. concluded in 2011 that the Black Death. . . was caused by a variant of Y. pestis. . . ”} & \multirow{2}{*}{24\%}\\
+         & & Q: \textit{“Who \textbf{discovered} Y. pestis?”} & \\
+         \hline
+         Answerable & Question is answerable (i.e. dataset noise). & & 7\%\\
+         \hline
+    \end{tabular}
+    \caption{Types of negative examples in SQuAD 2.0 exhibiting a wide range of phenomena.}
+    \label{tab:my_label}
+\end{table}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{|l|r|r|}
+        \hline
+        & SQuAD 1.1 & SQuAD 2.0\\
+        \hline
+        \textbf{Train} & & \\
+        Total examples & 87,599 & 130,319\\
+        Negative examples & 0 & 43,498\\
+        Total articles & 442 & 442\\
+        Articles with negatives & 0 & 285\\
+        \hline
+        \textbf{Developmen}t & & \\
+        Total examples & 10,570 & 11,873\\
+        Negative examples & 0 & 5,945\\
+        Total articles & 48 & 35\\
+        Articles with negatives & 0 & 35\\
+        \hline
+        \textbf{Test} & & \\
+        Total examples & 9,533 & 8,862\\
+        Negative examples & 0 & 4,332\\
+        Total articles & 46 & 28\\
+        Articles with negatives & 0 & 28\\
+        \hline
+    \end{tabular}
+    \caption{Dataset statistics of SQuAD 2.0, compared to the previous SQuAD 1.1.}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c c|c c|c c|}
+    \hline
+        \multirow{2}{*}{System} & \multicolumn{2}{c|}{SQuAD 1.1 test} & \multicolumn{2}{c|}{SQuAD 2.0 dev} & \multicolumn{2}{c|}{SQuAD 2.0 test}\\
+         & EM & F1 & EM & F1 & EM & F1 \\
+        \hline
+        BNA & 68.0 & 77.3 & 59.8 & 62.6 & 59.2 & 62.1\\
+        DocQA & 72.1 & 81.0 & 61.9 & 64.8 & 59.3 & 62.3\\
+        DocQA + ELMo & \textbf{78.6} & \textbf{85.8} & \textbf{65.1} & \textbf{67.6} & \textbf{63.4} & \textbf{66.3}\\
+        \hline
+        Human & 82.3 & 91.2 & 86.3 & 89.0 & 86.9 & 89.5\\
+        Human–Machine Gap & 3.7 & 5.4 & \textbf{21.2} & \textbf{21.4} & \textbf{23.5} & \textbf{23.2} \\
+        \hline
+    \end{tabular}
+    \caption{Exact Match (EM) and F1 scores on SQuAD 1.1 and 2.0. The gap between humans and the best tested model is much larger on SQuAD 2.0, suggesting there is a great deal of room for model improvement.}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c c|c c|c c|}
+    \hline
+        \multirow{2}{*}{System} & \multicolumn{2}{c|}{SQuAD 1.1 + TFIDF} & \multicolumn{2}{c|}{SQuAD 1.1 + RULEBASED} & \multicolumn{2}{c|}{SQuAD 2.0 dev}\\
+         & EM & F1 & EM & F1 & EM & F1 \\
+        \hline
+        BNA & 72.7 & 76.6 & 80.1 & 84.8 & 59.8 & 62.6\\
+        DocQA & 75.6 & 79.2 & 80.8 & 84.8 & 61.9 & 64.8\\
+        DocQA + ELMo & \textbf{79.4} & \textbf{83.0} & \textbf{85.7} & \textbf{89.6} & \textbf{65.1} & \textbf{67.6}\\
+        \hline
+    \end{tabular}
+    \caption{Exact Match (EM) and F1 scores on the SQuAD 2.0 development set, compared with SQuAD 1.1 with two types of automatically generated negative examples. SQuAD 2.0 is more challenging for current models.}
+\end{table}
+
+\end{document}

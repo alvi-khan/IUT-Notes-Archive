@@ -1,0 +1,126 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Mathematical Equations}
+\author{My Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Inline Equation: $F = ma$.
+Display Mode Equation:
+$$F = ma$$
+
+Superscript:
+$$(a + b)^2 = a^2 + 2ab + b^2$$
+$$6.023 \times 10^{23}$$
+Subscript:
+$$x_1^2 + x^2_2 = 1$$
+$$x^{y_1}$$
+
+Integration:
+$$\int(x^2 + 2x)dx = \frac{x^3}{3} + x^2 + c$$
+Integration with limits:
+$$\int\limits_0^2(x^2 + 2x)dx$$
+Summation with limits:
+$$\sum\limits_{i=1}^n (i) = \frac{n(n + 1)}{2}$$
+
+Symbols:
+$$\alpha, \beta, \times, \otimes, \cup, \cap, \subset, \supset, <, >, \leq, \geq, \neq, \int, \sum, \prod$$
+
+Brackets:
+$$(a + b)$$
+$$[a + b]$$
+$$\{a + b\}$$
+$$\langle a+b \rangle$$
+$$\|a + b\|$$
+
+Large Brackets:
+$$F = G\left(\frac{m_1 m_2}{r^2}\right)$$
+
+Nested Fractions:
+$$a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3+\dots}}}$$
+Nested Functions with same size:
+$$a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3+\dots}}}$$
+
+Matrices:
+$$
+X =
+\begin{matrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{matrix}
+$$
+$$
+X =
+\begin{pmatrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{pmatrix}
+$$
+$$
+X =
+\begin{bmatrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{bmatrix}
+$$
+$$
+X =
+\begin{Bmatrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{Bmatrix}
+$$
+$$
+X =
+\begin{vmatrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{vmatrix}
+$$
+$$
+X =
+\begin{Vmatrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{Vmatrix}
+$$
+$$
+X = \left|\begin{matrix}
+1 & 2 & 3\\
+4 & 5 & 6
+\end{matrix}\right|
+$$
+
+Numbered Equations and labels:
+\begin{equation}\label{eq:binom}
+x = \frac{-b \pm \sqrt{b^2 - 4ab}}{2a}
+\end{equation}
+In equation \ref{eq:binom}, we can see a formula.
+
+Aligned Equations:
+\begin{align}
+    a + b + c &= d\\
+    a &= d - b - c\label{eq:3}
+\end{align}
+Equation \ref{eq:3}
+
+Trigonometric Functions:
+$$\sin(a + b) = \sin(a)\cos(b) + \cos(a)\sin(b)$$
+
+Limits:
+$$\frac{d}{dx}f(x) = \lim_{h \to 0}\frac{f(x + h) - f(h)}{h}$$
+
+More Symbols:
+$$\mathbb{R}, \mathbb{N}, \mathbb{Z}$$, $$\forall$$
+
+Piece-wise Functions:
+$$P(X) = \begin{cases}
+0.5, & \qquad X = \text{Head}\\
+0.5, & \qquad X = \text{Tail}
+\end{cases}$$
+\end{document}

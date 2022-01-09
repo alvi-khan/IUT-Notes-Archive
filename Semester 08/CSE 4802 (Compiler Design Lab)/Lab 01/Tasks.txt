@@ -1,0 +1,20 @@
+Lex: Lexical Lexical Analyzer Builder
+
+Assignment 1a:
+Write a lex program to count and display total number of words, numbers and characters from a input line.
+
+Assignment 1b:
+Write a lex program to count total number of words, numbers and characters in a text file. File name will be given as an argument to the program.
+
+Assignment 1c:
+Write a lex program to count total number of words, numbers and characters inside a number of  file. File names will be given as arguments to the program. The word counter will show statistics for each file in one line and accumulated statistics will be shown in last line.
+
+Example: Assume the counter program name is wc.l and produced executable file is wc.exe. then, wc.exe file1.txt file2.txt file3.txt commant will generate following output
+
+file_name words, numbers, characters
+file1.txt 23, 5, 98
+file1.txt 13, 7, 54
+file1.txt 15, 6, 65
+total  51, 18,  217
+
+Hints: Example 2-3 (page 36)  of book lex & yeacc

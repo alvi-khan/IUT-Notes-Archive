@@ -1,0 +1,11 @@
+1.
+
+select bloodGroup, count(citizenID) from Citizen group by bloodGroup;
+
+2.
+
+select max(professionID), profession.name, max(salary), count(citizenID) from Profession, Citizen where citizen.profession = profession.professionID group by profession.name;
+
+3.
+
+select professionID, profession.name from (select max(professionID), profession.name, max(salary), count(citizenID) from Profession, Citizen where citizen.profession = profession.professionID group by profession.name order by count(citizenID) desc) where ROWNUM <= 3;

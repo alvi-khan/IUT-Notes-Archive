@@ -1,0 +1,13 @@
+ID attributes have been added to entities that did not have them so that records can be uniquely identified.
+
+The relationship between Citizen and DrivingLicense is a one-to-one relationship, since a citizen can have at most one driving license, and a driving license can belong to only one citizen.
+
+The relationship between Hospital and Citizen is a many-to-many relationship, since a citizen may visit multiple hospitals, multiple times, and each hospital may have mutiple patients. This requires an extra table in the database, which will also record the reason for the visit and the time of the visit as attributes for the relationship.
+
+The every record in the Book Entity has an ID. The ID of each copy of a book should be unique for a library. This means that, from the perpective of the entire database, the ID of the book and the library it belongs to should form a composite primary key.
+
+The relationship between Book and Citizen is a many-to-many relationship. A citizen may borrow multiple books, and a book may be borrowed by multiple citizens, albeit at different times. This relationship also demands an extra table in the database, which should use the ID of the book borrowed, the ID of the library it belongs to and the date it was borrowed as a composite primary key. The return date should also be stored here, since the borrow date and return date are attributes of this relationship. In reality, there should be an additional constraint that checks that the return date of the a book is before the current date (i.e. it has been returned) before letting another citizen borrow the book. However, adding that restriction is beyond my capabilities.
+
+The relationship between Book and Library is a one-to-many relationship, since a copy of a book can only belong to one library, but a library may have multiple books.
+
+The relationship between Book and Publisher is a one-to-many relationship since a book can only be published by one publisher, but a publisher can publish multiple books.

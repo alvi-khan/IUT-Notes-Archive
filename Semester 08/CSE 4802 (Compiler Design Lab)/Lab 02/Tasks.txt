@@ -1,0 +1,4 @@
+Lex and Yacc: A simple calculator
+
+Assignment: Using lex/yacc builder write codes for a simple calculator supporting following operations:
+addition, subtraction, division, multiplication, bracket, unary minus, and power.

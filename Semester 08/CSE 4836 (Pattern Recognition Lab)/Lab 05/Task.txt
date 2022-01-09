@@ -1,0 +1,7 @@
+Use the following notebook, links, etc. as a guideline to generate sentences in your preferred language (except English). Choose the pretrained generative model in your preferred language from https://huggingface.co/models. Take some example contexts and generate sentences from them using the following decoding methods
+
+Greedy Search
+Top-P (nucleus) sampling
+Top-K Sampling
+Sampling
+Beam search

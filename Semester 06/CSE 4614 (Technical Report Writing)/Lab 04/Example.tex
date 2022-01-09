@@ -1,0 +1,193 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+\title{Lab 4 - Tables}
+\author{My Name}
+\date{\today}
+\usepackage{multirow}
+
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+\usepackage{longtable}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{table}[h]
+    \centering
+    \caption{Caption}
+    \label{tab:my_label}
+    
+    \begin{tabular}{| l | R{3cm} | r |}
+        \hline
+        \multirow{2}{1.1cm}{row 12} & row12  row12 row12 row12 row12 row12 row12 row12 row12 row12 row12 row12 row12 row12 & row 13\\
+        \cline{2-3}
+         & row 22 & row 233\\
+        \hline
+        \multicolumn{2}{| c |}{merged column} & row 31\\
+        \hline
+        row 41 & \multicolumn{2}{ c |}{merged column}\\
+        \hline
+    \end{tabular}
+    
+\end{table}
+
+\begin{center}
+    \begin{longtable}{| c | c | c |}
+    \caption{A sample longtable}\label{tab:longtab}\\
+    \hline
+    \textbf{First Column} & \textbf{Second Column} & \textbf{Third Column}\\
+    \hline
+    \endfirsthead
+    \multicolumn{3}{r}{Continued from previous page}\\
+    \hline
+    \textbf{First Column} & \textbf{Second Column} & \textbf{Third Column}\\
+    \hline
+    \endhead
+    \hline
+    \multicolumn{3}{|r|}{Continued to next page}\\
+    \hline
+    \endfoot
+    \hline
+    \multicolumn{3}{|c|}{Table ends here}\\
+    \hline\hline
+    \endlastfoot
+    
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    row 11 & row 12 & row 13\\
+    
+    \end{longtable}
+\end{center}
+\end{document}

@@ -1,0 +1,29 @@
+create table Profession
+(
+	professionID int,
+	name varchar2(20),
+	eduQualifications varchar2(100),
+	salary int,
+	constraint ProfessionPK primary key (professionID)
+);
+
+create table Address
+(
+	district varchar2(20),
+	division varchar2(20),
+	constraint AddressPK primary key (district)
+);
+
+create table Citizen
+(
+	citizenID int,
+	name varchar2(20),
+	DOB int,
+	bloodGroup varchar2(3),
+	address varchar2(20),
+	profession int,
+	constraint CitizenPK primary key (citizenID),
+	constraint checkBG check (bloodGroup in ('A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+' and 'O-')),
+	constraint ProfessionFK foreign key (profession) references Profession (professionID),
+	constraint AddressFK foreign key (address) references Address (district)
+);

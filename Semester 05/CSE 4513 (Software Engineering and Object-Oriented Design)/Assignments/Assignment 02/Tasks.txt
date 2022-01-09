@@ -1,0 +1,4 @@
+Your answer should include:
+1. Problematic UI
+2. Proposed UI
+3. How the proposed UI solve the problem of existing one.

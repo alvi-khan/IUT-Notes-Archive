@@ -1,0 +1,27 @@
+A
+Lecturer
+02 12 1995
+CSE
+17.5
+Software Development
+
+B
+Professor
+14 7 1995
+CSE
+15
+Artificial Intelligence
+
+C
+Lecturer
+22 05 1995
+CSE
+16
+Computer Networks
+
+D
+Associate Professor
+12 11 1995
+EEE
+18.5
+Digital Pulse Techniques

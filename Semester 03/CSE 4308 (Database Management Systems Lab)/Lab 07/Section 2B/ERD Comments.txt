@@ -1,0 +1,13 @@
+Every entity has been given an ID as an additional attribute so that records can be uniquely identified.
+
+The relationship between Branch and Employee is a many-to-one relationship, since an employee can only work at a single branch, but a single branch can have can have any number of employees (except 0 since a branch existing without any employees at all would be very odd).
+
+Clients register at branches and can register at multiple branches. Branches can, and most likely will, have multiple clients. A branch could also have no clients at all (for example if it has just opened). Thus, the relationship between Client and Branch is a many-to-many relationship. Clients are assigned to a contact person at the branch they register at, so the Registered at relationship has the EmployeeID of the contact person as an additional attribute.
+
+(I have decided to not make a relationship between Employee and Client, even though one could argue they have a many-to-many relationship as well. I decided to do this since clients are actually registering with branches, and are being given a single contact person during each registration. This means a client can only have one contact person per branch. Creating a many-to-many relationship between Client and Employee would indicate that a client can have multiple employees as contacts, regardless of how many branches they register at.)
+
+Each property must be owned by a single owner, though a single owner could own multiple properties. Thus, this is a many-to-one relationship.
+
+Each property is also overseen by a single contact person who is a staff member. Any staff member could be overseeing any number of properties, even none. Thus, this is a many-to-one relationship.
+
+The relationship between a client and a property is that a client may visit a property. The client may visit multiple properties, and a property may be visited by multiple clients. Thus, this is a many-to-many relationship. There are two additional attributes associated with this relationship, the date of the visit and any comments made by the client during the visit. We also know that a client may only visit a particular property once per day, so it is obvious that ClientID, PropertyID and Date should be used used as a composite primary key.

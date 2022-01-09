@@ -1,0 +1,19 @@
+Apply the followings on both RGB and HSI color models of a 24-bit color image.
+Compare the results.
+
+
+Task # 01 (Point Processing)
+Implement the Negative Transformation function on color images.
+* What differences are noticed between the RGB-negative and HSV-negative?
+
+Task # 02 (Histogram Equalization)
+Apply the Global HE technique on color images.
+* Does the HE result become same for both RGB and HSV models?
+
+
+Task # 03 (Linear Filter)
+Apply the sharpening operation on color images.
+
+Task # 04 (Non-Linear Filter)
+Add 'salt & pepper' noise to individual channels of an image (you can use any built-in function or design your own function).
+Apply the median filter on color images to reduce noise.

@@ -1,0 +1,16 @@
+Filtering in the Frequency Domain
+
+Task #01
+Implement the following Low Pass Filters
+i. Ideal LPF
+ii. Butterworth LPF
+iii. Gaussian LPF
+
+Task #02
+Convert the Low Pass Filters above to High Pass Filters
+i. Ideal HPF
+ii. Butterworth HPF
+iii. Gaussian HPF
+
+Analyze all the filters with outputs. Use images from Chapter 4.
+Discuss on the outputs obtained by changing different parameters, such as cut-off frequency, order, etc.
