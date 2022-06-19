@@ -1,0 +1,79 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Cauchy-Riemann Equations}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Let
+\begin{equation}
+f(x,y)\equiv u(x,y)+iv(x,y),
+\end{equation}
+where
+\begin{equation}
+z \equiv x+iy,
+\end{equation}
+so
+\begin{equation}
+dz=dx+idy.
+\end{equation}
+The total derivative of $f$ with respect to $z$ is then
+\begin{align}
+    \frac{df}{dz}&=\frac{\partial f}{\partial x}\frac{\partial x}{\partial z}+\frac{\partial f}{\partial y}\frac{\partial y}{\partial z}\\
+    &=\frac{1}{2}\left(\frac{\partial f}{\partial x} - i\frac{\partial f}{\partial y}\right).\label{eq:5}
+\end{align}
+In terms of $u$ and $v$, (\ref{eq:5}) becomes 
+\begin{align}
+\frac{df}{dz}&=\frac{1}{2}\left[\left(\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}\right)-i\left(\frac{\partial u}{\partial y} + i\frac{\partial v}{\partial y}\right)\right]\\
+&=\frac{1}{2}\left[\left(\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}\right)+\left(-i\frac{\partial u}{\partial y} + \frac{\partial v}{\partial y}\right)\right].
+\end{align}
+Along the real, or $x$-axis, $\partial f/\partial y=0$, so
+\begin{equation}\label{eq:8}
+    \frac{\partial f}{\partial z} = \frac{1}{2}\left(\frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x}\right).
+\end{equation}
+Along the imaginary, or $y$-axis, $\partial f/\partial x = 0$, so
+\begin{equation}\label{eq:9}
+    \frac{\partial f}{\partial z} = \frac{1}{2}\left(-i\frac{\partial u}{\partial y} + \frac{\partial v}{\partial y}\right).
+\end{equation}
+If $f$ is complex differentiable, then the value of the derivative must be the same for a given $dz$, regardless of its orientation. Therefore, (\ref{eq:8}) must equal (\ref{eq:9}), which requires that
+\begin{equation}
+    \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}
+\end{equation}
+and
+\begin{equation}
+    \frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}.
+\end{equation}
+These are known as the Cauchy-Riemann equations.\\
+They lead to the conditions
+\begin{align}
+    \frac{\partial^2 u}{\partial x^2} &= -\frac{\partial^2 u}{\partial y^2}\\
+    \frac{\partial^2 v}{\partial x^2} &= -\frac{\partial^2 v}{\partial y^2}.
+\end{align}
+The Cauchy-Riemann equations may be concisely written as
+\begin{align}
+    \frac{\partial f}{\partial \bar z} &= \frac{1}{2}\left[\frac{\partial f}{\partial x} + i\frac{\partial f}{\partial y}\right]\\
+    &=\frac{1}{2}\left[\left(\frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x}\right) + i\left(\frac{\partial u}{\partial y} + i\frac{\partial v}{\partial y} \right)\right]\\
+    &=\frac{1}{2}\left[\left(\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right) + i\left(\frac{\partial u}{\partial y} + i\frac{\partial v}{\partial x} \right)\right]\\
+    &= 0,
+\end{align}
+where $\bar z$ is the complex conjugate.\\
+If $z = re^{i\theta}$, then the Cauchy-Riemann equations become
+\begin{align}
+    \frac{\partial u}{\partial r} &= \frac{1}{r}\frac{\partial v}{\partial \theta}\\
+    \frac{1}{r}\frac{\partial u}{\partial \theta} &= -\frac{\partial v}{\partial r}
+\end{align}
+(Abramowitz and Stegun 1929, p. 17).\\
+If $u$ and $v$ satisfy the Cauchy-Riemann equations, they aslo satisfy Laplace's equation in two dimensions, since
+\begin{align}
+    \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2} &= \frac{\partial}{\partial x}\left(\frac{\partial v}{\partial y}\right) + \frac{\partial}{\partial y}\left(-\frac{\partial v}{\partial x}\right) = 0\\
+    \frac{\partial^2 v}{\partial x^2}+\frac{\partial^2 v}{\partial y^2} &= \frac{\partial}{\partial x}\left(-\frac{\partial u}{\partial y}\right) + \frac{\partial}{\partial y}\left(\frac{\partial u}{\partial x}\right) = 0
+\end{align}
+By picking an arbitrary $f(z)$, solutions can be found which automatically satisfy the Cauchy-Riemann equations and Laplace's equation. This fact is used to use conformal mappings to find solutions to physical problems involving scalar potentials such as fluid flow and electrostatics.
+\end{document}

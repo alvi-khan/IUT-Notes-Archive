@@ -1,0 +1,16 @@
+Dec 17 02:19:13.799 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Dec 17 02:19:13.799 HYPERVISOR: Started on IP = localhost, TCP port = 49970.
+Dec 17 02:19:14.281 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 17 02:19:14.281 HYPERVISOR: exec_cmd: hypervisor working_dir E:\Dropbox\IUT\Semester 06\CSE 4616 (Wireless Networks Lab)\Lab 01\Lab Task\project-files\dynamips 
+Dec 17 02:19:14.281 GENERAL: working_dir=E:\Dropbox\IUT\Semester 06\CSE 4616 (Wireless Networks Lab)\Lab 01\Lab Task\project-files\dynamips
+Dec 17 02:19:14.281 HYPERVISOR: exec_cmd: ethsw create Switch2 
+Dec 17 02:19:15.723 HYPERVISOR: exec_cmd: nio create_udp udp-d35e5a23-5618-41ba-aa72-6d8fa3f4e389 10003 127.0.0.1 10002 
+Dec 17 02:19:15.723 HYPERVISOR: exec_cmd: ethsw add_nio Switch2 udp-d35e5a23-5618-41ba-aa72-6d8fa3f4e389 
+Dec 17 02:19:15.755 HYPERVISOR: exec_cmd: ethsw set_access_port Switch2 udp-d35e5a23-5618-41ba-aa72-6d8fa3f4e389 1 
+Dec 17 02:19:16.544 HYPERVISOR: exec_cmd: nio create_udp udp-9dd89801-adeb-4b1e-ad75-ad4ec47c5b66 10009 127.0.0.1 10008 
+Dec 17 02:19:16.544 HYPERVISOR: exec_cmd: ethsw add_nio Switch2 udp-9dd89801-adeb-4b1e-ad75-ad4ec47c5b66 
+Dec 17 02:19:16.560 HYPERVISOR: exec_cmd: ethsw set_access_port Switch2 udp-9dd89801-adeb-4b1e-ad75-ad4ec47c5b66 1 
+Dec 17 02:31:13.042 HYPERVISOR: exec_cmd: ethsw delete Switch2 
+Dec 17 02:31:13.105 HYPERVISOR: exec_cmd: hypervisor stop 
+Dec 17 02:31:13.404 HYPERVISOR: Stopped.
+Dec 17 02:31:13.404 GENERAL: reset done.
